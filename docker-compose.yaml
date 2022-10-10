@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+    python:
+        container_name: python
+        build:
+            dockerfile: ./Dockerfile
+            context: .
+        environment:
+            EJERCICIO: actividad1
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        volumes:
+            - ./start.py:/usr/src/app/start.py
+            - ./src:/usr/src/app/src
