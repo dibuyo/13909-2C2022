@@ -1,4 +1,12 @@
 ﻿#Ejercicio A
+#Realizar un programa que  determine si el polígono ingresado es un triángulo en 
+#base a los grados de sus tres ángulos internos. 
+#Si la suma de los tres ángulos es igual a  180º es un triángulo, 
+#de lo contrario mostrar que no lo es. De tratarse de un triángulo,
+#verifique si alguno de sus ángulos es recto (90º), 
+#de cumplirse mostrar que se trata de un triángulo rectángulo. 
+#De no ser si no mostrar nada.
+
 print("Clase 9 - Ejercicio A")
 print("Actividad obligatoria - Martín Rivas")
 

@@ -12,6 +12,8 @@ docker build -t python -f Dockerfile .
 
 ### Ejecutar el siguiente comando en la carpeta raiz para ejecutar la imagen.
 
+La variable de entorno EJERCICIO puede ser modificada por el nombre del archivo a ejecutar. En el siguiente ejemplo se ejecuta el ejercicio-a.
+
 ```console
 docker run \
 -it \
