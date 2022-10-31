@@ -1,4 +1,5 @@
-FROM python:2.7
+ARG  VERSION=2.7
+FROM python:${VERSION}
 
 ENV EJERCICIO main
 
@@ -10,4 +11,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "sh", "-c", "python start.py $EJERCICIO" ]
+CMD [ "start.py $EJERCICIO" ]
+
+ENTRYPOINT ["sh", "-c", "python start.py $EJERCICIO"]

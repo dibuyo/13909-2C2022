@@ -1,11 +1,13 @@
 version: "3.7"
 
 services:
-    python:
-        container_name: python
+    python27:
+        container_name: python27
         build:
             dockerfile: ./Dockerfile
             context: .
+            args:
+                version: 2.7
         environment:
             EJERCICIO: actividad1
         extra_hosts:
@@ -13,3 +15,19 @@ services:
         volumes:
             - ./start.py:/usr/src/app/start.py
             - ./src:/usr/src/app/src
+            - ./data:/usr/src/app/data
+    python38:
+        container_name: python
+        build:
+            dockerfile: ./Dockerfile
+            context: .
+            args:
+                version: 3.8
+        environment:
+            EJERCICIO: actividad1
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        volumes:
+            - ./start.py:/usr/src/app/start.py
+            - ./src:/usr/src/app/src
+            - ./data:/usr/src/app/data

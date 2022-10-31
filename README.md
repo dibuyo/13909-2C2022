@@ -7,7 +7,7 @@
 ### Ejecutar el siguiente comando en la carpeta raiz para crear la imagen.
 
 ```console
-docker build -t python -f Dockerfile .
+docker build -t python -f Dockerfile . --build-arg VERSION=3.8
 ```
 
 ### Ejecutar el siguiente comando en la carpeta raiz para ejecutar la imagen.
@@ -19,7 +19,8 @@ docker run \
 -it \
 --name python \
 --mount type=bind,source="$PWD"/src,target=/usr/src/app/src \
+--mount type=bind,source="$PWD"/data,target=/usr/src/app/data \
 --rm \
--e EJERCICIO=ejercicio-a \
+-e EJERCICIO=trabajo-practico \
 python
 ```
