@@ -113,11 +113,14 @@ def census():
     _private_save("data/censo.dat")
 
 def resumen(timeout):
-    internet(0)
-    computer(0)
-    computer_top(0)
-    vivinda(0)
-    edades(0)
+    if( len(censados) > 0):
+        internet(0)
+        computer(0)
+        computer_top(0)
+        vivinda(0)
+        edades(0)
+    else:
+        print(color("No hay ningun alumno censado.", fg='red'))
     time.sleep(timeout)
 
 def internet(timeout):
@@ -139,11 +142,15 @@ def computer(timeout):
 def computer_top(timeout):
     max = 0
     al = {}
+
     for a in censados:
         if( a.computadoras > max ):
             al = a
 
-    print("Alumno mas computadoras: ({}) {}, {} tiene {} computadoras".format(color(al.legajo, fg='green'), al.nombre, al.apellido, color(al.computadoras, fg='green')))
+    if( len(censados) > 0):
+        print("Alumno mas computadoras: ({}) {}, {} tiene {} computadoras".format(color(al.legajo, fg='green'), al.nombre, al.apellido, color(al.computadoras, fg='green')))
+    else:
+        print(color("No hay ningun alumno censado.", fg='red'))
     time.sleep(timeout)
 
 def vivinda(timeout):

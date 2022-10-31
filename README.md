@@ -21,6 +21,6 @@ docker run \
 --mount type=bind,source="$PWD"/src,target=/usr/src/app/src \
 --mount type=bind,source="$PWD"/data,target=/usr/src/app/data \
 --rm \
--e EJERCICIO=trabajo-practico \
+-e EJERCICIO=trabajo-practico-labs \
 python
 ```
